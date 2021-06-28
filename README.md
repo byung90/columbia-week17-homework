@@ -10,7 +10,7 @@
 
 Fitter Bug is a simple app that allows the user to keep track of their workouts so they can be better organized in the pursuit toward their fitness goals.
 
-The app is built with Node.js, Express, Mongo DB, and Mongoose; and is deployed on Heroku via the following link: 
+The app is built with Node.js, Express, Mongo DB, and Mongoose; and is deployed on Heroku via the following link: https://cryptic-coast-22431.herokuapp.com/
 
 # Installation and Use
 
