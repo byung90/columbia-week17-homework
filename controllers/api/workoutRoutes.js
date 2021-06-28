@@ -3,7 +3,16 @@ const { Workout } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    const lastWorkout = await Workout.find({}).sort({ date: -1 });
+    const lastWorkout = await Workout.aggregate([
+      {
+        $addFields: {
+          totalDuration: {
+            $sum: '$exercises.duration'
+          }
+        }
+      }
+    ])
+      .sort({ date: -1 });
     res.json(lastWorkout);
   }
   catch (err) {
@@ -70,3 +79,5 @@ router.get('/range', async (req, res) => {
     res.json(err);
   }
 });
+
+module.exports = router;
