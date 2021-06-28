@@ -15,5 +15,10 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/homework", { useNewUrlParser: true });
 
+app.use(require('./controllers'));
+
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}!`);
+});
